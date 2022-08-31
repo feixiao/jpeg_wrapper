@@ -17,6 +17,7 @@
 #include <vector>
 #include <fstream>
 
+
 #ifdef _MSC_VER
 #pragma warning(disable : 4996)
 #endif // _MSC_VER
@@ -30,6 +31,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #elif defined(__APPLE__)
+#include <sys/stat.h>
 #else // unknow
 #error "The current platform is not supported"
 #endif // (defined(_WIN32) || defined(_WIN64))
@@ -41,6 +43,7 @@ x_int32_t X_mkdir(x_cstring_t xszt_path, x_uint32_t xut_mode)
 #elif defined(__linux__) // linux
     if (0 != mkdir(xszt_path, xut_mode))
 #elif defined(__APPLE__)
+    if (0 != mkdir(xszt_path, xut_mode))
 #else // unknow
 #error "The current platform is not supported"
 #endif // (defined(_WIN32) || defined(_WIN64))
