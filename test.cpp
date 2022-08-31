@@ -644,7 +644,6 @@ int main(int argc, char * argv[])
 
     //======================================
     // 解析输入参数
-
     xit_dmode = get_mode(argv[1]);
     if (JCTRL_MODE_UNKNOW == xit_dmode)
     {

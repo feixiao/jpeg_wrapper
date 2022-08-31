@@ -11,6 +11,8 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 include_directories(/usr/local/opt/jpeg-turbo/include)
 
+add_definitions("-DTEST_ONLY_ONE")
+
 if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
     add_definitions("-Wno-invalid-source-encoding")
     add_definitions("-Os")
