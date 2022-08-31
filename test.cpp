@@ -29,6 +29,7 @@
 #elif defined(__linux__) // linux
 #include <sys/stat.h>
 #include <sys/types.h>
+#elif defined(__APPLE__)
 #else // unknow
 #error "The current platform is not supported"
 #endif // (defined(_WIN32) || defined(_WIN64))
@@ -39,6 +40,7 @@ x_int32_t X_mkdir(x_cstring_t xszt_path, x_uint32_t xut_mode)
     if (0 != mkdir(xszt_path))
 #elif defined(__linux__) // linux
     if (0 != mkdir(xszt_path, xut_mode))
+#elif defined(__APPLE__)
 #else // unknow
 #error "The current platform is not supported"
 #endif // (defined(_WIN32) || defined(_WIN64))

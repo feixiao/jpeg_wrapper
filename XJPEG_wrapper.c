@@ -522,7 +522,7 @@ static j_int_t jenc_from_rgb(
         case JPEG_CS_GRAYSCALE : jpeg_set_colorspace(jcs_ptr, JCS_GRAYSCALE); break;
         case JPEG_CS_RGB       : jpeg_set_colorspace(jcs_ptr, JCS_RGB      ); break;
         case JPEG_CS_YCbCr     : jpeg_set_colorspace(jcs_ptr, JCS_YCbCr    ); break;
-        case JPEG_CS_BG_YCC    : jpeg_set_colorspace(jcs_ptr, JCS_BG_YCC   ); break;
+//        case JPEG_CS_BG_YCC    : jpeg_set_colorspace(jcs_ptr, JCS_BG_YCC   ); break;
 
         default:
             break;
@@ -1254,8 +1254,8 @@ static j_int_t jdec_info(
             case JCS_YCbCr     : jinfo_ptr->jit_cstype = JPEG_CS_YCbCr    ; break;
             case JCS_CMYK      : jinfo_ptr->jit_cstype = JPEG_CS_CMYK     ; break;
             case JCS_YCCK      : jinfo_ptr->jit_cstype = JPEG_CS_YCCK     ; break;
-            case JCS_BG_RGB    : jinfo_ptr->jit_cstype = JPEG_CS_BG_RGB   ; break;
-            case JCS_BG_YCC    : jinfo_ptr->jit_cstype = JPEG_CS_BG_YCC   ; break;
+//            case JCS_BG_RGB    : jinfo_ptr->jit_cstype = JPEG_CS_BG_RGB   ; break;
+//            case JCS_BG_YCC    : jinfo_ptr->jit_cstype = JPEG_CS_BG_YCC   ; break;
             default            : jinfo_ptr->jit_cstype = JPEG_CS_UNKNOWN  ; break;
             }
         }
@@ -1379,9 +1379,9 @@ static j_int_t jdec_to_rgb(
         case JCS_GRAYSCALE:
         case JCS_RGB      :
         case JCS_YCbCr    :
-        case JCS_BG_YCC   :
-            jds_ptr->out_color_space = JCS_RGB;
-            break;
+//        case JCS_BG_YCC   :
+//            jds_ptr->out_color_space = JCS_RGB;
+//            break;
 
         default:
             jit_err = JDEC_ERR_COLOR_FORMAT;
