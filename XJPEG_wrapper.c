@@ -1381,7 +1381,7 @@ static j_int_t jdec_to_rgb(
         case JCS_YCbCr    :
 //        case JCS_BG_YCC   :
 //            jds_ptr->out_color_space = JCS_RGB;
-//            break;
+            break;
 
         default:
             jit_err = JDEC_ERR_COLOR_FORMAT;
@@ -1841,7 +1841,8 @@ j_int_t jdec_src_to_rgb(
         case JCTRL_CS_ARGB:
         case JCTRL_CS_ABGR:
             break;
-        default: jit_ctrlcs = JCTRL_CS_UNKNOW;
+        default:
+            jit_ctrlcs = JCTRL_CS_UNKNOW;
             break;
         }
 
